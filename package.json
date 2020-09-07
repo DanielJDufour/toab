@@ -1,0 +1,31 @@
+{
+  "name": "toab",
+  "version": "0.0.0",
+  "description": "To Array Buffer: Convert Buffer and Typed Arrays to Array Buffers",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --write *.js",
+    "test": "ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJDufour/toab.git"
+  },
+  "keywords": [
+    "array",
+    "buffer",
+    "arraybuffer",
+    "typed",
+    "typedarray",
+    "uint8array"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/DanielJDufour/toab/issues"
+  },
+  "homepage": "https://github.com/DanielJDufour/toab#readme",
+  "devDependencies": {
+    "ava": "^3.12.1"
+  }
+}
