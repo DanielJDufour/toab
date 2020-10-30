@@ -1,5 +1,5 @@
 # toab
-To Array Buffer: Convert Buffer and Typed Arrays to Array Buffers
+To Array Buffer: Convert Buffer, Files and Typed Arrays to Array Buffers
 
 # install
 ```bash
