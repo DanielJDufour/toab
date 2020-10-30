@@ -18,10 +18,10 @@ const arrayBuffer = toab(buffer);
 
 # convert File to an array buffer
 ```javascript
-    document.querySelector('input').addEventListener('change', async event => {
-        const file = event.target.files[0];
-        const arrayBuffer = await toab(file);
-    });
+document.querySelector('input').addEventListener('change', async event => {
+    const file = event.target.files[0];
+    const arrayBuffer = await toab(file);
+});
 ```
 
 # convert typed arrays to array buffers
