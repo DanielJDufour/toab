@@ -27,6 +27,10 @@ function toab(data, { debug = false } = { debug: false }) {
       return data.arrayBuffer();
     }
   } else if (typeof data === "string") {
+    console.log("IS STRING");
+    if (data.startsWith("data:")) {
+      return fetch(data).then(response => response.arrayBuffer());
+    }
   }
   if (debug) console.log("[toab] result is:", result);
   return result;

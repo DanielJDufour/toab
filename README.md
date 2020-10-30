@@ -1,5 +1,5 @@
 # toab
-To Array Buffer: Convert Buffer, Files and Typed Arrays to Array Buffers
+To Array Buffer: Convert Buffer, Data URLs, Files and Typed Arrays to Array Buffers
 
 # install
 ```bash
@@ -18,10 +18,18 @@ const arrayBuffer = toab(buffer);
 
 # convert File to an array buffer
 ```javascript
-    document.querySelector('input').addEventListener('change', async event => {
-        const file = event.target.files[0];
-        const arrayBuffer = await toab(file);
-    });
+document.querySelector('input').addEventListener('change', async event => {
+    const file = event.target.files[0];
+    const arrayBuffer = await toab(file);
+});
+```
+
+# convert data url to array buffer
+```javascript
+// the context comes from a canvas element 
+const url = context.toDataURL('image/jpeg');
+// url is data:image/jpeg;base64,/9j/4AAQSkZJRgABA"
+const arrayBuffer = await toab(url);
 ```
 
 # convert typed arrays to array buffers

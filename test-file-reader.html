@@ -3,18 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/file-saver"></script>
     <script src="./index.js"></script>
   </head>
   <body>
     <input type="file" style="margin: 30px"/>
+    <canvas width="200" height="100" />
+    <script>
+      const canvas = document.querySelector("canvas");
+      var ctx = canvas.getContext("2d");
+
+      // Create gradient
+      var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+      grd.addColorStop(0, "red");
+      grd.addColorStop(1, "white");
+
+      // Fill with gradient
+      ctx.fillStyle = grd;
+      ctx.fillRect(10, 10, 150, 80);
+
+      ctx.beginPath();
+      ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+      ctx.stroke();      
+    </script>
     <script>
         document.querySelector('input').addEventListener('change', async event => {
             const file = event.target.files[0];
             console.log({file});
             const arrayBuffer = await toab(file);
             console.log({arrayBuffer});
-            if (arrayBuffer.byteLength === 68603) {
-                document.body.style.background = "green";
+            if (arrayBuffer.byteLength > 68603) {
+                const url = canvas.toDataURL('image/jpeg');
+                console.log({url});
+                const other = await toab(url);
+                console.log({other});
+                if (other.byteLength === 3979) {
+                  document.body.style.background = "green";
+                } else {
+                  document.body.style.background = "red";
+                }
+                saveAs(new Blob([other]), 'toab-test.jpg');
             }
         });
     </script>
