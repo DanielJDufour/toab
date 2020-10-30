@@ -1,10 +1,11 @@
 {
   "name": "toab",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "To Array Buffer: Convert Buffer and Typed Arrays to Array Buffers",
   "main": "index.js",
   "scripts": {
-    "format": "npx prettier --write *.js",
+    "format": "npx prettier --arrow-parens=avoid --write *.js",
+    "serve": "http-server",
     "test": "ava --verbose"
   },
   "repository": {
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/DanielJDufour/toab#readme",
   "devDependencies": {
-    "ava": "^3.12.1"
+    "ava": "^3.12.1",
+    "http-server": "^0.12.3"
   }
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <input type="file" style="margin: 30px"/>
+    <script>
+        document.querySelector('input').addEventListener('change', async event => {
+            const file = event.target.files[0];
+            console.log({file});
+            const arrayBuffer = await toab(file);
+            console.log({arrayBuffer});
+            if (arrayBuffer.byteLength === 68603) {
+                document.body.style.background = "green";
+            }
+        });
+    </script>
+  </body>
+</html>

@@ -2,15 +2,14 @@ function toab(data, { debug = false } = { debug: false }) {
   let result;
   if (data instanceof ArrayBuffer) {
     if (debug) console.log("[toab] data appears to already be an array buffer");
-    return data;
+    result = data;
   } else if (typeof Buffer !== "undefined" && Buffer.isBuffer(data)) {
     if (debug) console.log("[toab] data appears to be a buffer");
     result = data.buffer.slice(
       data.byteOffset,
       data.byteOffset + data.byteLength
     );
-  }
-  if (
+  } else if (
     data instanceof Int8Array ||
     data instanceof Uint8Array ||
     data instanceof Int16Array ||
@@ -23,9 +22,16 @@ function toab(data, { debug = false } = { debug: false }) {
     data instanceof BigUint64Array
   ) {
     result = data.buffer;
+  } else if (typeof File !== "undefined" && data instanceof File) {
+    if (data.arrayBuffer) {
+      return data.arrayBuffer();
+    }
+  } else if (typeof data === "string") {
   }
   if (debug) console.log("[toab] result is:", result);
   return result;
 }
 
-module.exports = toab;
+if (typeof module === "object") module.exports = toab;
+if (typeof self !== "undefined") self.toab = toab;
+if (typeof window !== "undefined") window.toab = toab;
