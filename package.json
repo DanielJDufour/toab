@@ -1,12 +1,12 @@
 {
   "name": "toab",
   "version": "1.0.0",
-  "description": "To Array Buffer: Convert Buffer and Typed Arrays to Array Buffers",
-  "main": "index.js",
+  "description": "To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers",
+  "main": "toab.js",
   "scripts": {
     "format": "npx prettier --arrow-parens=avoid --write *.js",
-    "serve": "http-server",
-    "test": "ava --verbose"
+    "serve": "npx http-server",
+    "test": "npx ava --verbose"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,5 @@
     "url": "https://github.com/DanielJDufour/toab/issues"
   },
   "homepage": "https://github.com/DanielJDufour/toab#readme",
-  "devDependencies": {
-    "ava": "^3.12.1",
-    "http-server": "^0.12.3"
-  }
+  "devDependencies": {}
 }

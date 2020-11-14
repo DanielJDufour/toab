@@ -30,6 +30,10 @@ function toab(data, { debug = false } = { debug: false }) {
     console.log("IS STRING");
     if (data.startsWith("data:")) {
       return fetch(data).then(response => response.arrayBuffer());
+    } else if (typeof TextEncoder === "function") {
+      const encoder = new TextEncoder();
+      const uint8Array = encoder.encode(data);
+      result = uint8Array.buffer;
     }
   }
   if (debug) console.log("[toab] result is:", result);

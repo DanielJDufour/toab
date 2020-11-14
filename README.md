@@ -1,6 +1,5 @@
 # toab
-To Array Buffer: Convert Buffer, Data URLs, Files and Typed Arrays to Array Buffers
-
+To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers
 # install
 ```bash
 npm install toab
@@ -34,14 +33,19 @@ const arrayBuffer = await toab(url);
 
 # convert typed arrays to array buffers
 ```javascript
-toab(Int8Array)
-toab(Uint8Array)
-toab(Int16Array)
-toab(Uint16Array)
-toab(Int32Array)
-toab(Uint32Array)
-toab(Float32Array)
-toab(Float64Array)
-toab(BigInt64Array)
-toab(BigUint64Array)
+const arrayBuffer = toab(Int8Array)
+const arrayBuffer = toab(Uint8Array)
+const arrayBuffer = toab(Int16Array)
+const arrayBuffer = toab(Uint16Array)
+const arrayBuffer = toab(Int32Array)
+const arrayBuffer = toab(Uint32Array)
+const arrayBuffer = toab(Float32Array)
+const arrayBuffer = toab(Float64Array)
+const arrayBuffer = toab(BigInt64Array)
+const arrayBuffer = toab(BigUint64Array)
+```
+
+# convert text to an array buffer (in UTF-8)
+```javascript
+const arrayBuffer = toab("Hello, I'm a String.");
 ```
