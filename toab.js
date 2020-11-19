@@ -38,7 +38,7 @@ function toab(data, { debug = false } = { debug: false }) {
   ) {
     return data.arrayBuffer();
   } else if (typeof data === "string") {
-    console.log("IS STRING");
+    if (debug) console.log("[toab] data appears to be a string");
     if (data.startsWith("data:")) {
       return fetch(data).then(response => response.arrayBuffer());
     } else if (typeof TextEncoder === "function") {
