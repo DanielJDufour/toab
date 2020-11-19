@@ -52,7 +52,7 @@ const arrayBuffer = toab("Hello, I'm a String.");
 
 # convert fetch Response to an array buffer
 ```javascript
-const response = await fetch("https://example.org/file.dat")
+const response = await fetch("https://example.org/file.dat");
 const arrayBuffer = await toab(response);
 
 // or for a one-line solution
