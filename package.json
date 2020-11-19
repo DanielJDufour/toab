@@ -26,5 +26,7 @@
     "url": "https://github.com/DanielJDufour/toab/issues"
   },
   "homepage": "https://github.com/DanielJDufour/toab#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-fetch": "^3.0.6"
+  }
 }

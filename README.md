@@ -1,5 +1,5 @@
 # toab
-To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers
+To Array Buffer: Convert Buffer, Data URLs, Files, Response, Text, and Typed Arrays to Array Buffers
 # install
 ```bash
 npm install toab
@@ -49,3 +49,13 @@ const arrayBuffer = toab(BigUint64Array)
 ```javascript
 const arrayBuffer = toab("Hello, I'm a String.");
 ```
+
+# convert fetch Response to an array buffer
+```javascript
+const response = await fetch("https://example.org/file.dat")
+const arrayBuffer = await toab(response);
+
+// or for a one-line solution
+const arrayBuffer = await fetch("https://example.org/file.dat").then(toab);
+```
+

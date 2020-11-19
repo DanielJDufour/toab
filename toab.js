@@ -1,5 +1,8 @@
+function isResponse(data) {}
+
 function toab(data, { debug = false } = { debug: false }) {
   let result;
+
   if (data instanceof ArrayBuffer) {
     if (debug) console.log("[toab] data appears to already be an array buffer");
     result = data;
@@ -26,6 +29,14 @@ function toab(data, { debug = false } = { debug: false }) {
     if (data.arrayBuffer) {
       return data.arrayBuffer();
     }
+  } else if (
+    (typeof Response !== "undefined" && data instanceof Response) ||
+    (typeof data === "object" &&
+      data.__proto__ &&
+      data.__proto__.constructor &&
+      data.__proto__.constructor.name === "Response")
+  ) {
+    return data.arrayBuffer();
   } else if (typeof data === "string") {
     console.log("IS STRING");
     if (data.startsWith("data:")) {
