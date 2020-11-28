@@ -11,6 +11,7 @@ function toab(data, { debug = false } = { debug: false }) {
       data.byteOffset + data.byteLength
     );
   } else if (
+    data instanceof DataView ||
     data instanceof Int8Array ||
     data instanceof Uint8Array ||
     data instanceof Int16Array ||

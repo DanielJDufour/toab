@@ -31,18 +31,23 @@ const url = context.toDataURL('image/jpeg');
 const arrayBuffer = await toab(url);
 ```
 
+# convert data view to array buffer
+```javascript
+const arrayBuffer = await toab(dataView)
+```
+
 # convert typed arrays to array buffers
 ```javascript
-const arrayBuffer = await toab(Int8Array)
-const arrayBuffer = await toab(Uint8Array)
-const arrayBuffer = await toab(Int16Array)
-const arrayBuffer = await toab(Uint16Array)
-const arrayBuffer = await toab(Int32Array)
-const arrayBuffer = await toab(Uint32Array)
-const arrayBuffer = await toab(Float32Array)
-const arrayBuffer = await toab(Float64Array)
-const arrayBuffer = await toab(BigInt64Array)
-const arrayBuffer = await toab(BigUint64Array)
+const arrayBuffer = await toab(int8Array)
+const arrayBuffer = await toab(uint8Array)
+const arrayBuffer = await toab(int16Array)
+const arrayBuffer = await toab(uint16Array)
+const arrayBuffer = await toab(int32Array)
+const arrayBuffer = await toab(uint32Array)
+const arrayBuffer = await toab(float32Array)
+const arrayBuffer = await toab(float64Array)
+const arrayBuffer = await toab(bigInt64Array)
+const arrayBuffer = await toab(bigUint64Array)
 ```
 
 # convert text to an array buffer (in UTF-8)

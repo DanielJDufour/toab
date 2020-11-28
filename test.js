@@ -42,3 +42,10 @@ test("converting data url in NodeJS", async t => {
   t.is(ab.byteLength, 3979);
   fs.writeFileSync("./data/test.tmp.jpg", Buffer.from(ab));
 });
+
+test("converting dataview", async t => {
+  const buffer = Buffer.alloc(1024);
+  const dataView = new DataView(await toab(buffer, { debug: false }));
+  const ab = await toab(dataView);
+  t.true(ab instanceof ArrayBuffer);
+});
