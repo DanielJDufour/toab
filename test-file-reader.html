@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/file-saver"></script>
-    <script src="./index.js"></script>
+    <script src="./toab.js"></script>
   </head>
   <body>
     <input type="file" style="margin: 30px"/>
@@ -32,7 +32,7 @@
             console.log({file});
             const arrayBuffer = await toab(file);
             console.log({arrayBuffer});
-            if (arrayBuffer.byteLength > 68603) {
+            if (arrayBuffer.byteLength > 1000) {
                 const url = canvas.toDataURL('image/jpeg');
                 console.log({url});
                 const other = await toab(url);

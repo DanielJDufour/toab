@@ -3,6 +3,9 @@
   "version": "1.0.2",
   "description": "To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers",
   "main": "toab.js",
+  "files": [
+    "toab.js"
+  ],
   "scripts": {
     "format": "npx prettier --arrow-parens=avoid --write *.js",
     "serve": "npx http-server",

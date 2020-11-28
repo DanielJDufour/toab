@@ -12,7 +12,7 @@ const fs = require("fs");
 const toab = require("toab");
 
 const buffer = fs.readFileSync("test.png");
-const arrayBuffer = toab(buffer);
+const arrayBuffer = await toab(buffer);
 ```
 
 # convert File to an array buffer
@@ -33,21 +33,21 @@ const arrayBuffer = await toab(url);
 
 # convert typed arrays to array buffers
 ```javascript
-const arrayBuffer = toab(Int8Array)
-const arrayBuffer = toab(Uint8Array)
-const arrayBuffer = toab(Int16Array)
-const arrayBuffer = toab(Uint16Array)
-const arrayBuffer = toab(Int32Array)
-const arrayBuffer = toab(Uint32Array)
-const arrayBuffer = toab(Float32Array)
-const arrayBuffer = toab(Float64Array)
-const arrayBuffer = toab(BigInt64Array)
-const arrayBuffer = toab(BigUint64Array)
+const arrayBuffer = await toab(Int8Array)
+const arrayBuffer = await toab(Uint8Array)
+const arrayBuffer = await toab(Int16Array)
+const arrayBuffer = await toab(Uint16Array)
+const arrayBuffer = await toab(Int32Array)
+const arrayBuffer = await toab(Uint32Array)
+const arrayBuffer = await toab(Float32Array)
+const arrayBuffer = await toab(Float64Array)
+const arrayBuffer = await toab(BigInt64Array)
+const arrayBuffer = await toab(BigUint64Array)
 ```
 
 # convert text to an array buffer (in UTF-8)
 ```javascript
-const arrayBuffer = toab("Hello, I'm a String.");
+const arrayBuffer = await toab("Hello, I'm a String.");
 ```
 
 # convert fetch Response to an array buffer

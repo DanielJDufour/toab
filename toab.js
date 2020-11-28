@@ -1,5 +1,3 @@
-function isResponse(data) {}
-
 function toab(data, { debug = false } = { debug: false }) {
   let result;
 
@@ -40,7 +38,13 @@ function toab(data, { debug = false } = { debug: false }) {
   } else if (typeof data === "string") {
     if (debug) console.log("[toab] data appears to be a string");
     if (data.startsWith("data:")) {
-      return fetch(data).then(response => response.arrayBuffer());
+      if (typeof fetch !== "undefined") {
+        return fetch(data).then(response => response.arrayBuffer());
+      } else if (typeof Buffer !== "undefined" && data.includes(";base64,")) {
+        const encoding = "base64";
+        const buffer = Buffer.from(data.split(";base64,")[1], encoding);
+        return toab(buffer);
+      }
     } else if (typeof TextEncoder === "function") {
       const encoder = new TextEncoder();
       const uint8Array = encoder.encode(data);

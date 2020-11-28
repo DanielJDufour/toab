@@ -1,4 +1,5 @@
 const test = require("ava");
+const fs = require("fs");
 const toab = require("./toab");
 const fetch = require("cross-fetch");
 
@@ -33,4 +34,11 @@ test("converting Response", async t => {
   const response = await fetch(url);
   const ab = await toab(response);
   t.is(ab.byteLength, 2760);
+});
+
+test("converting data url in NodeJS", async t => {
+  const url = fs.readFileSync("./data/data-url.txt", "utf-8");
+  const ab = await toab(url, { debug: false });
+  t.is(ab.byteLength, 3979);
+  fs.writeFileSync("./data/test.tmp.jpg", Buffer.from(ab));
 });
