@@ -1,5 +1,7 @@
-function toab(data, { debug = false } = { debug: false }) {
+async function toab(data, { debug = false } = { debug: false }) {
   let result;
+
+  if (data instanceof Promise) data = await data;
 
   if (data instanceof ArrayBuffer) {
     if (debug) console.log("[toab] data appears to already be an array buffer");
