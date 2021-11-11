@@ -7,9 +7,9 @@
     "toab.js"
   ],
   "scripts": {
-    "format": "npx prettier --arrow-parens=avoid --write *.js",
+    "format": "npx prettier --arrow-parens=avoid --trailing-comma=none --write *.js",
     "serve": "npx http-server",
-    "test": "npx ava --verbose"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/DanielJDufour/toab#readme",
   "devDependencies": {
-    "cross-fetch": "^3.0.6"
+    "cross-fetch": "^3.0.6",
+    "flug": "^2.1.1"
   }
 }

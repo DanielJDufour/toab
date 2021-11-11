@@ -25,7 +25,14 @@ async function toab(data, { debug = false } = { debug: false }) {
     data instanceof BigInt64Array ||
     data instanceof BigUint64Array
   ) {
-    result = data.buffer;
+    if (data.byteLength !== data.buffer.byteLength) {
+      result = data.buffer.slice(
+        data.byteOffset,
+        data.byteOffset + data.byteLength
+      );
+    } else {
+      result = data.buffer;
+    }
   } else if (typeof File !== "undefined" && data instanceof File) {
     if (data.arrayBuffer) {
       return data.arrayBuffer();
