@@ -1,6 +1,6 @@
 {
   "name": "toab",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers",
   "main": "toab.js",
   "types": "toab.d.ts",
