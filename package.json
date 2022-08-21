@@ -3,11 +3,13 @@
   "version": "2.2.1",
   "description": "To Array Buffer: Convert Buffer, Data URLs, Files, Text, and Typed Arrays to Array Buffers",
   "main": "toab.js",
+  "types": "toab.d.ts",
   "files": [
+    "toab.d.ts",
     "toab.js"
   ],
   "scripts": {
-    "format": "npx prettier --arrow-parens=avoid --trailing-comma=none --write *.js",
+    "format": "npx prettier --arrow-parens=avoid --trailing-comma=none --write *.js *.ts",
     "serve": "npx http-server",
     "test": "node test.js"
   },
